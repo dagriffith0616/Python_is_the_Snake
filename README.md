@@ -1,1 +1,1 @@
-Simple snake game coded in Python using Turtle Graphics. 
+REWORKING GAME >< Currently broken file paths.
