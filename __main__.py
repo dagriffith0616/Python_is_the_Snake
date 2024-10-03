@@ -5,15 +5,20 @@ from score import Score
 import time
 def draw_border():
     artist = Turtle("turtle")
-    artist.speed('slow')
+    artist.speed(5)
     artist.penup()
     artist.goto(-290, 0)
     artist.pencolor('red')
+    artist.setheading(90)
     artist.pendown()
     artist.goto(-290,290)
+    artist.setheading(0)
     artist.goto(290,290)
+    artist.setheading(270)
     artist.goto(290, -290)
+    artist.setheading(180)
     artist.goto(-290, -290)
+    artist.setheading(90)
     artist.goto(-290, 0)
     artist.hideturtle()
 screen = Screen()
@@ -45,13 +50,16 @@ while not game_over:
         snake.extend()
         score.increase_score()
     if snake.head.xcor() > 285 or snake.head.xcor() < -285 or snake.head.ycor() > 285 or snake.head.ycor() < -285:
-        score.game_over()
-        game_over = True
+        time.sleep(2)
+        score.reset()
+        snake.reset()
 
     for segment in snake.segments[1:]:
         if snake.head.distance(segment) < 10:
-            score.game_over()
-            game_over = True
+            time.sleep(1)
+            score.reset()
+            snake.reset()
+
 
 
 
