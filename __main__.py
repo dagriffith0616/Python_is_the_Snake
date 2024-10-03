@@ -64,3 +64,7 @@ while not game_over:
 
 
 screen.exitonclick()
+
+
+
+
